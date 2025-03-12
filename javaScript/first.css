@@ -1,0 +1,144 @@
+/* --- General Styling --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    padding: 20px;
+}
+
+/* --- Form Container --- */
+.form-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-container:hover {
+    transform: scale(1.02);
+}
+
+/* --- Progress Bar --- */
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    counter-reset: step;
+}
+
+.progress-bar div {
+    width: 32%;
+    text-align: center;
+    padding: 8px 0;
+    background: #d1d1d1;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.progress-bar div.active {
+    background: #007bff;
+    color: white;
+}
+
+/* --- Form Steps --- */
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Labels and Inputs --- */
+label {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    margin: 8px 0;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #333;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+    border: 2px solid #007bff;
+}
+
+/* --- Buttons --- */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button.next {
+    background: #007bff;
+    color: white;
+}
+
+button.back {
+    background: #f0f0f0;
+    color: #333;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* --- Summary Section --- */
+.summary {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 500px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
